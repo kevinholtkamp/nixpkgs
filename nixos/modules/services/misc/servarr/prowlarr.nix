@@ -54,7 +54,7 @@ in
           DynamicUser = true;
           StateDirectory = "prowlarr";
           EnvironmentFile = cfg.environmentFiles;
-          ExecStart = "${lib.getExe cfg.package} -nobrowser -data=/var/lib/prowlarr";
+          ExecStart = "${lib.getExe cfg.package} -nobrowser -data=${cfg.package}";
           Restart = "on-failure";
         };
         unitConfig.RequiresMountsFor = [ cfg.dataDir ];
