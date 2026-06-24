@@ -11,16 +11,16 @@
               type =
                 with lib.types;
                 nullOr (enum [
-                  "external"
-                  "builtIn"
-                  "script"
+                  "External"
+                  "BuiltIn"
+                  "Script"
                 ]);
               description = "which update mechanism to use";
               default = "external";
             };
             automatically = lib.mkOption {
               type = lib.types.bool;
-              description = "Automatically download and install updates.";
+              description = "Automatically download and install updates. (Will usually not work anyway on NixOS)";
               default = false;
             };
           };
